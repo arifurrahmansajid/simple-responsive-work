@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            margin-top: 300px;
+            display: flex;
+            max-width: 1140px;
+            row-gap: 20px;
+            column-gap: 10px;
+            justify-content: center;
+            align-items: center;
+            background-color: skyblue;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+        }
+        li {
+            margin: 0 10px;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+        #menu-toggle {
+            display: none;
+        }
+        #menu-toggle:checked + label + ul {
+            display: flex;
+            background-color: lightgray;
+            border: 1px solid black;
+        }
+
+        /* smaller device */
+        @media screen and (max-width: 576px) {
+            nav {
+                flex-direction: column;
+            }
+            ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            .hamburger {
+                display: flex;
+            }
+            li {
+                margin: 10px 0;
+            }
+        }
+        /* medium device */
+        @media screen and (min-width: 576px) and (max-width: 992px) {
+            nav {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <ul>
+            <li><a href="calendar.html">Calender</a></li>
+            <li><a href="responsive.html">Responsive</a></li>
+            <li><a href="media_query.html">Media_query</a></li>
+            <li><a href="media.html">Media</a></li>
+            <li><a href="flexbox.html">Flexbox</a></li>
+            <li><a href="form.html">Form</a></li>
+            <li><a href="grid.html">Grid</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
